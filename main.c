@@ -16,8 +16,8 @@ void printHUD(int turn, Tanque t1, Tanque t2) {
     printf("T3 HP: %d   T4 HP: %d\n", t1.vida, t2.vida); // T3=player1, T4=player2
     printf("T3 dir: %d   T4 dir: %d\n", t1.dir, t2.dir);
 
-    if (turn % 2 == 1) printf("\x1b[32mTurn of T3 (Jugador 1)\x1b[0m\n");
-    else printf("\x1b[31mTurn of T4 (Jugador 2)\x1b[0m\n");
+    if (turn % 2 == 1) printf("\x1b[32mTurn of T1 (Jugador 1)\x1b[0m\n");
+    else printf("\x1b[31mTurn of T2 (Jugador 2)\x1b[0m\n");
 
     printf("Select: (u)p, (d)own, (l)eft, (r)ight, (s)hoot\n");
 }
@@ -85,4 +85,5 @@ int main() {
     // --- FASE 3: Limpieza ---
     liberaMemoria(mapa, FILAS); // Liberar RAM
     return 0;
+
 }
