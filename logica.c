@@ -138,7 +138,7 @@ void disparar(int **mapa, int filas, int cols, int sRow, int sCol, int sDir, int
             // Logica de impacto a Jugadores
             if(shooter == 1) { // Dispara player1 (Target T2)
                 if(s.row == t2->fila && s.col == t2->col) {
-                    t2->hp--;
+                    t2->vida--;
                     // Respawn: Buscar nueva spawn y actualizar mapa
                     Tanque nuevoT2 = reubicarTanque(mapa, filas, cols, *t2);
                     mapa[t2->fila][t2->col] = 0; // viejo desaparece
@@ -149,7 +149,7 @@ void disparar(int **mapa, int filas, int cols, int sRow, int sCol, int sDir, int
             }
             if(shooter == 2) { // Dispara player2 (Target T1)
                 if(s.row == t1->fila && s.col == t1->col) {
-                    t1->hp--;
+                    t1->vida--;
                     Tanque nuevoT1 = reubicarTanque(mapa, filas, cols, *t1);
                     mapa[t1->fila][t1->col] = 0;
                     *t1 = nuevoT1;
@@ -166,4 +166,5 @@ int verificarGanador(Tanque t1, Tanque t2) {
     if (t1.vida <= 0) return 2; // Gana J2
     if (t2.vida <= 0) return 1; // Gana J1
     return 0;
+
 }
