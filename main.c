@@ -77,12 +77,13 @@ int main() {
     // Mensaje de empate si se acaban los turnos
     if(ganador == 0) {
         visualizarMapa(mapa, FILAS, COLUMNAS);
-        if(t1.hp > t2.hp) printf("\nGANA EL JUGADOR 1 (T3)\n");
-        else if(t2.hp > t1.hp) printf("\nGANA EL JUGADOR 2 (T4)\n");
+        if(t1.vida > t2.vida) printf("\nGANA EL JUGADOR 1 (T3)\n");
+        else if(t2.vida > t1.vida) printf("\nGANA EL JUGADOR 2 (T4)\n");
         else printf("\nEMPATE\n");
     }
 
     // --- FASE 3: Limpieza ---
     liberaMemoria(mapa, FILAS); // Liberar RAM
     return 0;
+
 }
